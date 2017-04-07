@@ -49,10 +49,8 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a,b,c){ //eslint-disable-line
   var sumAB = sum(a,b);
   var sumABC = sum(sumAB[0],c);
-  console.log('adding works');
   var multiplyAB = multiply(a,b);
   var multiplyABC = multiply(multiplyAB[0],c);
-  console.log('multiply works');
   var sumString = a + ' and ' + b + ' and ' + c + ' sum to ' + sumABC[0] + '.';
   var multiplyString = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiplyABC[0] + '.';
   var returnArray = [sumABC[0], multiplyABC[0], sumString, multiplyString];
@@ -75,7 +73,13 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2,3,4]; //eslint-disable-line
 
 function sumArray(testArray){ //eslint-disable-line
-
+  var sumResult = sum(testArray[0], testArray[1]);
+  var totalSumResult = sum(sumResult[0], testArray[2]);
+  console.log('adding works');
+  var sumAnswer = totalSumResult[0];
+  var sumMessage = testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + sumAnswer + ' is their sum.';
+  var totalSumArray = [sumAnswer, sumMessage];
+  return totalSumArray;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
